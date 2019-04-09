@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.sapl.distributormsdpharma.activities.ActivityDashBoard">
+
+    <RelativeLayout
+        android:id="@+id/rel_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_toolbar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/swipe_refresh_layout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rel_toolbar"
+                android:layout_marginBottom="@dimen/page_margin"
+                android:layout_marginTop="@dimen/card_top"
+                android:paddingBottom="@dimen/dp16">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_received_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_marginTop="@dimen/card_top">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_received_orders"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/received_orders" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_received_orders">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_received_orders"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="@string/order_booking"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_received_orders_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp8"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/dp16"
+                            android:layout_toRightOf="@+id/img_received_orders">
+
+
+                            <com.sapl.distributormsdpharma.customView.CircularTextView
+                                android:id="@+id/txt_order_cart_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:gravity="center"
+                                android:text="0" />
+
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_new_order"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dp10"
+                                android:layout_marginRight="@dimen/dp36"
+                                android:gravity="center"
+                                android:text="New Order"
+                                android:textColor="@color/white"
+
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_delivery_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_below="@+id/card_received_orders"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_marginTop="@dimen/card_top">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_delivery_status"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/delivery_status" />
+
+                        <RelativeLayout
+                            android:id="@+id/ll1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_delivery_status">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_order_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="@string/order_status"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_order_status_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentTop="true"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp8"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:layout_below="@+id/ll1"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_toRightOf="@+id/img_delivery_status"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="90dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.sapl.distributormsdpharma.customView.CircularTextView
+                                    android:id="@+id/txt_dispatch_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="0" />
+
+                                <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                    android:id="@+id/txt_dispatch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Dispatch"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="90dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.sapl.distributormsdpharma.customView.CircularTextView
+                                    android:id="@+id/txt_delivered_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="0"
+
+
+                                    />
+
+                                <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                    android:id="@+id/txt_delivered"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Delivered"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="90dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.sapl.distributormsdpharma.customView.CircularTextView
+                                    android:id="@+id/txt_rejected_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="0" />
+
+                                <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                    android:id="@+id/txt_rejected"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Rejected"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_resource_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_below="@+id/card_delivery_status"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_marginTop="@dimen/card_top">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_resource"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/resource_page" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_resource">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_resource_page"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="@string/resource_page"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_resource_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp8"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="500dp"
+                            android:layout_marginLeft="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp60"
+                            android:layout_toRightOf="@+id/img_resource"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="90dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/img_resource_product"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginRight="@dimen/dp5"
+                                    android:src="@drawable/product"
+                                    android:tint="@color/tint_for_bar_icon" />
+
+                                <com.sapl.distributormsdpharma.customView.CircularTextView
+                                    android:id="@+id/txt_resource_product_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:layout_toRightOf="@+id/img_resource_product"
+                                    android:gravity="center"
+                                    android:text="1" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="90dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:id="@+id/img_resource_video"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/dp5"
+                                    android:layout_toLeftOf="@+id/resource_center"
+                                    android:src="@drawable/video"
+                                    android:tint="@color/tint_for_bar_icon" />
+
+
+                                <com.sapl.distributormsdpharma.customView.CircularTextView
+                                    android:id="@+id/txt_resource_video_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:layout_toRightOf="@+id/resource_center"
+                                    android:gravity="center"
+                                    android:text="3" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="90dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:id="@+id/img_resource_new_product"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
+                                    android:layout_marginRight="@dimen/dp5"
+                                    android:layout_toLeftOf="@+id/txt_resource_new_product_no"
+                                    android:src="@drawable/pdf"
+                                    android:tint="@color/tint_for_bar_icon" />
+
+                                <com.sapl.distributormsdpharma.customView.CircularTextView
+                                    android:id="@+id/txt_resource_new_product_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/dp5"
+                                    android:layout_marginRight="@dimen/dp5"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:gravity="center"
+                                    android:text="1" />
+                                <!--  </RelativeLayout>-->
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_update_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_below="@+id/card_resource_page"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_marginTop="@dimen/card_top"
+                    android:paddingBottom="@dimen/dp16">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_profile_update"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/update_profile" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_profile_update">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_update_profile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="@string/update_profile"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_profile_update_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp8"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:layout_toRightOf="@+id/img_profile_update">
+
+                            <ImageView
+                                android:id="@+id/img_last_update"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:src="@drawable/last_update"
+                                android:tint="@color/tint_for_bar_icon" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_last_update"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/img_last_update"
+                                android:gravity="center"
+                                android:text="Last Update" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_price_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_below="@+id/card_update_profile"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_marginTop="@dimen/card_top"
+                    android:paddingBottom="@dimen/dp16">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_profile_update1"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/price_list" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_profile_update1">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_price_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="@string/price_list"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_profile_update_date1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp8"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:layout_toRightOf="@+id/img_profile_update1">
+
+                            <ImageView
+                                android:id="@+id/img_last_update1"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:src="@drawable/price_update"
+                                android:tint="@color/tint_for_bar_icon" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_last_update1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/img_last_update1"
+                                android:gravity="center"
+                                android:text="Last Update" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_below="@+id/card_price_list"
+                    android:layout_margin="@dimen/dp5"
+                    android:layout_marginTop="@dimen/card_top"
+                    android:paddingBottom="@dimen/dp16">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_profile_update2"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/rating" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_profile_update2">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_review_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="@string/review_rating"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_profile_update_date2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp8"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:layout_toRightOf="@+id/img_profile_update2">
+
+                            <ImageView
+                                android:id="@+id/img_last_update2"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:src="@drawable/price_update"
+                                android:tint="@color/tint_for_bar_icon" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_last_update2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/img_last_update2"
+                                android:gravity="center"
+                                android:text="Last Update" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_order_booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_height"
+                    android:layout_marginTop="@dimen/card_top"
+                    android:layout_below="@+id/card_view_rating"
+                    android:background="@drawable/background_border"
+                    android:layout_margin="@dimen/dp5"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_border">
+
+                        <ImageView
+                            android:id="@+id/img_order_booking"
+                            android:layout_width="@dimen/dp70"
+                            android:layout_height="@dimen/dp70"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/price_list" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_order_booking">
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_order_booking"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="Order Booking"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp16" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_order_booking_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:paddingTop="@dimen/dp5"
+                                android:text="2017-98-22"
+                                android:textColor="@color/heading_background"
+                                android:textSize="@dimen/sp10" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout_new"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:layout_toRightOf="@+id/img_order_booking">
+
+                            <ImageView
+                                android:id="@+id/img_order_cart"
+                                android:layout_width="@dimen/dp30"
+                                android:layout_height="@dimen/dp30"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="@dimen/dp5"
+                                android:src="@drawable/cart"
+                                android:tint="@color/tint_for_bar_icon" />
+
+                            <com.sapl.distributormsdpharma.customView.CircularTextView
+                                android:id="@+id/txt_order_booked_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/img_order_cart"
+                                android:gravity="center"
+                                android:text="0" />
+
+                            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                                android:id="@+id/txt_order_rs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dp5"
+                                android:layout_marginRight="@dimen/dp16"
+                                android:gravity="center"
+                                android:text="0.0"
+                                android:textColor="@color/white" />
+
+                            <ImageView
+                                android:id="@+id/img_order_rs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toLeftOf="@+id/txt_order_rs"
+                                android:src="@drawable/rupee"
+                                android:tint="@color/tint_for_bar_icon" />
+
+                        </RelativeLayout>
+
+                        <!--com.sapl.distributormsdpharma.customView.CustomUnderLine
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true" /-->
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

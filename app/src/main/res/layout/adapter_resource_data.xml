@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/indigo_050"
+    android:paddingTop="@dimen/dp3"
+    android:paddingBottom="@dimen/dp3"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/imgResource"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="@dimen/dp100"
+            android:src="@drawable/app_icon"
+            />
+
+        <RelativeLayout
+            android:layout_margin="@dimen/dp10"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imgResource"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txtResourceTitle"
+                android:layout_marginTop="@dimen/dp10"
+                android:paddingBottom="@dimen/dp5"
+                android:textSize="@dimen/sp16"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TITLE "/>
+
+            <TextView
+                android:id="@+id/txtResourceDescription"
+                android:layout_below="@+id/txtResourceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp14"
+                android:text="Discription "/>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">CORDZ-D</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">Registration</string>
+    <string name="enter_client_id">Enter Client ID</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="sign_up_link">Don\'t have an account? <b>Sign up</b> Here</string>
+    <string name="sign_in_link">Already have account? <b>Sign in</b> </string>
+    <string name="login">Login</string>
+
+    <string name="enter_retailer_name">Retailer Name</string>
+    <string name="enter_retailer_owner_name">Retailer\'s Owner Name</string>
+    <string name="enter_contact_no">Contact Number</string>
+    <string name="enter_retailer_owner_email">Retailer\'s Email Address</string>
+    <string name="next">Next</string>
+
+    <string name="enter_retailer_address">Enter Retailer Address</string>
+    <string name="enter_retailer_area">Enter Retailer Area</string>
+    <string name="enter_retailer_city">Enter Retailer City</string>
+    <string name="enter_retailer_district">Enter Retailer District</string>
+    <string name="enter_retailer_state">Enter Retailer State</string>
+    <string name="enter_retailer_pin_code">Enter Retailer Pin Code</string>
+    <string name="enter_retailer_shop_location">Get Retailer Shop Location</string>
+
+    <string name="enter_no_for_registration">Mobile Number For Registration</string>
+    <string name="enter_retailer_gst_no">Retailer GST Number</string>
+    <string name="enter_retailer_licence_no">Retailer Licence Number</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="submit">Submit</string>
+    <string name="resend">Resend</string>
+    <string name="varification_code">Varification Code</string>
+    <string name="enter_varification_code">Enter varification Code</string>
+    <string name="varification_warning">Please type the varification code send to \n+91 9527681122</string>
+
+    <string name="order_booking">Received Orders</string>
+    <string name="order_status">Delivery Status</string>
+    <string name="resource_page">Resource Page</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="price_list">Price List</string>
+    <string name="review_rating">Review Rating</string>
+    <string name="delivered">Delivered</string>
+
+
+    <string name="distpach">Dispatch</string>
+
+    <string name="search_distributor">Search Distributor</string>
+    <string name="accecpt_order">Accept Order</string>
+    <string name="reject_order">Reject Order</string>
+    <string name="Close_Application">Close Application..!</string>
+    <string name="do_you_want_exit">"Do you want to exit?"</string>
+    <string name="Exit">Exit</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="rupee_sign">₹</string>
+    <string name="submit_order">Submit Order</string>
+    <string name="free_bottel">Free Btl</string>
+    <string name="free_case">Free CS</string>
+    <string name="update_order">Update Order</string>
+    <string name="case_label">Case</string>
+    <string name="bottle_label">Bottle</string>
+    <string name="update">Update</string>
+    <string name="dialog_header">Distributor</string>
+    <string name="approve_order_title">Approve Order</string>
+
+    <string name="shop">Shop</string>
+    <string name="calender">Calender</string>
+    <string name="shop_calender">Shop &amp; Calender</string>
+    <string name="no_data">There is no data.</string>
+    <string name="no_pending_records">There is no pending records.</string>
+    <string name="enter_shopname_filter">enter shop name to be sort</string>
+    <string name="select_from_date">Select \'FROM\' date to be search</string>
+    <string name="select_to_date">Select \'TO\' date to be search</string>
+    <string name="no_resource_data">Resource data not found.</string>
+
+
+</resources>

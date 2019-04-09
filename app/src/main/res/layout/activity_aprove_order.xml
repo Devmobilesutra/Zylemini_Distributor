@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sapl.distributormsdpharma.activities.ActivityAproveOrder">
+
+
+    <include
+        android:id="@+id/toolbar_order_list"
+        layout="@layout/toolbar_order_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:paddingBottom="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_order_list"
+        android:background="@color/heading_background">
+        <!--ImageView
+            android:id="@+id/img_pic"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txt_date"
+            android:paddingTop="@dimen/dp5"
+            android:src="@android:drawable/ic_menu_upload" /-->
+
+        <LinearLayout
+            android:id="@+id/lin_distributor"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:id="@+id/txt_distinct_shop_name"
+                android:layout_width="0dp"
+                android:layout_weight="8.5"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_centerVertical="true"
+                android:text="Shop Name"
+                android:textSize="@dimen/sp12" />
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:id="@+id/img_call"
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="@dimen/dp26"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/distributor_call" />
+        </LinearLayout>
+
+        <com.sapl.distributormsdpharma.customView.CustomTextViewMedium
+            android:id="@+id/txt_amt_total"
+            android:layout_below="@+id/lin_distributor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp10"
+            android:text="1,400"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp5"
+            android:textSize="@dimen/dp12"
+            />
+
+
+
+        <!--ImageView
+            android:id="@+id/img_amt"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/txt_distinct_shop_name"
+            android:layout_toRightOf="@+id/txt_distinct_shop_name"
+            android:paddingTop="@dimen/dp8"
+            app:srcCompat="@drawable/rupee"
+            android:tint="@color/white"/-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout1"
+        android:background="@color/white">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp50">
+        </android.support.v7.widget.RecyclerView>
+
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:weightSum="2">
+
+            <com.sapl.distributormsdpharma.customView.CustomButtonRegular
+                android:id="@+id/btn_accept"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/accecpt_order"
+                android:textSize="@dimen/sp14"
+                tools:ignore="NotSibling" />
+
+
+            <com.sapl.distributormsdpharma.customView.CustomButtonRegular
+                android:id="@+id/btn_reject"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/sp14"
+                android:layout_marginLeft="@dimen/dp16"
+                android:layout_marginRight="@dimen/dp16"
+                android:layout_height="wrap_content"
+                android:text="@string/reject_order"
+                tools:ignore="NotSibling" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</RelativeLayout>
